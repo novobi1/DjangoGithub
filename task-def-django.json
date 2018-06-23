@@ -1,0 +1,24 @@
+{
+  "family": "django-student-records",
+  "containerDefinitions": [
+    {
+      "name": "student-records",
+      "image": "REPOSITORY_URI=212207190440.dkr.ecr.us-east-1.amazonaws.com/django:latest",
+      "cpu": 128,
+      "memoryReservation": 128,
+      "portMappings": [
+        {
+          "containerPort": 8000,
+	  "hostPort":80,
+          "protocol": "tcp"
+        }
+      ],
+      "command": [
+      ],
+      "environment" : [
+          { "name" : "DATABASE_HOST", "value" : "0.0.0.0" }
+      ],
+      "essential": true
+    }
+  ]
+}
