@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Students Records Home</h1>
+
+  <p>Welcome to <em>StudentsRecords</em></p>
+
+  <p>Record counts:</p>
+  <ul>
+    <li><strong>Students:</strong> {{ num_student }}</li>
+    <li><strong>Subjects:</strong> {{ num_subject }}</li>
+  </ul>
+  <p>Students Cache status: {{stu_cache_flag}} </p>
+  <p>Subjects Cache status: {{sub_cache_flag}} </p> 
+{% endblock %}

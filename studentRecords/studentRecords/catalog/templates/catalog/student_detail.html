@@ -1,0 +1,125 @@
+{% extends "base_generic.html" %}
+{% load thumbnail %}
+
+{% block content %}
+  <h1>Title: {{ student.name }}</h1>
+
+  <p><strong>ID:</strong> {{ student.studentID }}</p>
+  <p><strong>Avatar:</strong> {{student.avatar.url }} </p> 
+  <p> {{student.avatar }} </p>
+  <p>Media URL {{MEDIA_URL }} </p>
+  <div>
+    {% if student.avatar %}
+     <!--  <img src="{{student.avatar.url}}"/> -->
+      <img src="{% thumbnail student.avatar '640' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '640' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+     <!--
+     <img src="{% thumbnail student.avatar '640' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+    <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+
+     <img src="{% thumbnail student.avatar '768' as im %}{{ im.url }}{% endthumbnail %}"
+        srcset="
+        {% thumbnail student.avatar '768' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '992' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1200' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %},
+        {% thumbnail student.avatar '1920' as im %}  {{ im.url }} {{ im.x }}w{% endthumbnail %}"
+        alt="Some awesome soup"
+        sizes="100vw"
+     />
+    -->
+    {% else %}
+      <p>No avatar yet </p>
+    {% endif  %}
+  <p><strong>Scores:</strong> </p>
+  <div style="margin-left:20px;margin-top:20px">
+
+    {% for each_sub in student.score_set.all %}
+    <p><strong>{{each_sub.subjID.name }}</strong> ({{each_sub.subjID.subjectID}}):  {{each_sub.score}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

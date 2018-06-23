@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}                                                                           
+    <h1>Student List</h1>                                                                     
+                                                                                              
+    {% if student_list %}                                                                     
+    <table>
+      <tr>
+        <th>Student Name </th>
+        <th>Student ID </th>
+      </tr>
+
+      {% for s in student_list %}
+      <tr>
+        <td>
+          <a href="{{ s.get_absolute_url }}">{{ s.name }}</a>
+        </td>
+        <td>
+          <a href="{{ s.get_absolute_url }}">{{ s.studentID }}</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% else %}                                                                                
+      <p>There are no students.</p>                                            
+    {% endif %}
+    <p>Students Cache status: {{stu_cache_flag}} </p>
+    <p>Subjects Cache status: {{sub_cache_flag}} </p>
+                                                                               
+{% endblock %}

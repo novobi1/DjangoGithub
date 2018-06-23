@@ -1,0 +1,26 @@
+{
+  "family": "postgres",
+  "containerDefinitions": [
+    {
+      "name": "postgres",
+      "image": "postgres",
+      "cpu": 128,
+      "memoryReservation": 128,
+      "portMappings": [
+        {
+          "containerPort": 5432,
+	  "hostPort":5432,
+          "protocol": "tcp"
+        }
+      ],
+      "command": [
+      ],
+      "environment" : [
+          { "name" : "POSTGRES_PASSWORD", "value" : "mypassword" },
+          { "name" : "POSTGRES_USER", "value" : "studentadmin" },
+	  { "name" : "POSTGRES_DB", "value" : "studentdatabase" }
+      ],
+      "essential": true
+    }
+  ]
+}

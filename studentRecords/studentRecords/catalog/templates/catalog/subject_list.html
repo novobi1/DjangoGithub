@@ -1,0 +1,31 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Subjects List</h1>
+
+    {% if subject_list %}
+    <table>
+      <tr>
+        <th>Subject Name </th>
+        <th>Subject ID </th>
+      </tr>
+
+      {% for subj in subject_list %}
+      <tr>
+        <td>
+          {{ subj.name }} 
+        </td>
+        <td>
+          {{ subj.subjectID }}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% else %}
+      <p>There are no subjects.</p>
+    {% endif %}
+    <p>Students Cache status: {{stu_cache_flag}} </p>
+    <p>Subjects Cache status: {{sub_cache_flag}} </p>
+      
+{% endblock %}
